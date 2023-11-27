@@ -66,7 +66,6 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
-print(DATABASES['default'])
 
 AUTH_PASSWORD_VALIDATORS = [
     {
