@@ -28,7 +28,7 @@ services:
       - static:/frontend_static/
 
   gateway:
-    image: nrenat/kittygram_nginx
+    image: nrenat/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
