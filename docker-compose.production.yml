@@ -11,6 +11,7 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
+
   backend:
     image: nrenat/kittygram_backend
     env_file: .env
@@ -25,7 +26,7 @@ services:
     image: nrenat/kittygram_frontend
     command: cp -r /app/build/. /frontend_static/
     volumes:
-      - static:/frontend_static/
+      - static:/frontend_static
 
   gateway:
     image: nrenat/kittygram_gateway

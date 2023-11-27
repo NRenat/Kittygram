@@ -1,14 +1,13 @@
-# flake8: noqa
 import os
 from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+load_dotenv()
+
+SECRET_KEY = 'django-insecure-j_89af+30&&4qm*8z9_(^zz8p4-ho8z_m6ylm0s$h!-p@on1_^'
 
 DEBUG = True
 
@@ -21,13 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'rest_framework.authtoken',
-    'rest_framework',
-    'djoser',
     'corsheaders',
-
-    'cats.apps.CatsConfig',
+    'rest_framework',
+    'cats'
 ]
 
 MIDDLEWARE = [
@@ -71,9 +66,7 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+print(DATABASES['default'])
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -121,3 +114,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
 }
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
