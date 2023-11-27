@@ -12,7 +12,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: nrenat/backend/
+    build: nrenat/kittygram_backend/
     env_file: .env
     depends_on:
       - db
@@ -22,13 +22,13 @@ services:
 
   frontend:
     env_file: .env
-    image: nrenat/frontend/
+    image: nrenat/kittygram_frontend/
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
 
   gateway:
-    image: nrenat/nginx/
+    image: nrenat/kittygram_nginx/
     env_file: .env
     ports:
       - 9000:80
