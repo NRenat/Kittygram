@@ -1,17 +1,13 @@
 #  Kittygram
 
-## Описание
+**Kittygram** - это веб-приложение, созданное с использованием Django, где вы можете делиться фотографиями своих любимых котиков :3
 
-**Kittygram** - это веб-приложение, созданное с использованием Django, которое предоставляет пользователям возможность: 
- 
+## Возможности
 - Загружать фотографии своих котиков. 
 - Добавлять описание и достижения к каждому котику. 
 - Просматривать галерею фотографий своих котиков. 
 - Просматривать список достижений для каждого котика. 
-- Добавлять, редактировать и удалять фотографии и достижения. 
-
-## Требования 
-Для запуска Котикового Кабинета на вашем сервере, вам потребуется Docker 
+- Добавлять, редактировать и удалять фотографии и достижения.
 
 ## Установка и запуск
 Склонируйте репозиторий на ваш сервер: 
@@ -28,7 +24,7 @@ POSTGRES_PASSWORD=django_password
 POSTGRES_DB=django_db
 DB_HOST=db
 DB_PORT=5432
-SECRET_KEY=ваш секретный django ключ
+SECRET_KEY=your-super-secret-key
 ALLOWED_HOSTS=
 DEBUG=True
 ```
@@ -41,3 +37,10 @@ sudo docker compose -f docker-compose.production.yml exec backend python manage.
 sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
 sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /static/static/
 ```
+
+## Технологии
+* Django
+* DRF
+* PostgreSQL
+* Docker
+* nginx
