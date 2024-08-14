@@ -39,6 +39,7 @@ sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/col
 ```
 
 ## Технологии
+* Python 3.9
 * Django
 * DRF
 * PostgreSQL
